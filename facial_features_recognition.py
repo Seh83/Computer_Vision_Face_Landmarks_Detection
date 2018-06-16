@@ -18,9 +18,9 @@ def detect(gray, frame):
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(region_of_interest_color,(ex, ey),(ex+ew, ey+eh), (0, 255, 0), 2)
 
-        nose = nose_cascade.detectMultiScale(region_of_interest_gray, 1.1, 3)
-        for (ex, ey, ew, eh) in nose:
-            cv2.rectangle(region_of_interest_color, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
+        nose = nose_cascade.detectMultiScale(region_of_interest_gray, 1.1, 7)
+        for (nx, ny, nw, nh) in nose:
+            cv2.rectangle(region_of_interest_color, (nx, ny), (nx + nw, ny + nh), (0, 0, 255), 2)
     return frame
 
 # Turning the webcam on.
