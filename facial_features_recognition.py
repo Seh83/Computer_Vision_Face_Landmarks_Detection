@@ -26,15 +26,11 @@ def face_detection(gray, frame):
         for (ex, ey, ew, eh) in eyes:
             cv2.rectangle(img=roi_color, pt1=(ex, ey), pt2=(ex + ew, ey + eh), color=(0, 255, 0), thickness=2)
             
-        # Detect eyes
+        # Detect nose
         nose = nose_cascade.detectMultiScale(image=roi_gray, scaleFactor=1.3, minNeighbors=10)
         for (nx, ny, nw, nh) in nose:
             cv2.rectangle(img=roi_color, pt1=(nx, ny), pt2=(nx + nw, ny + nh), color=(0, 0, 255), thickness=2)
-
-        # Detect Smile
-        smile = smile_cascade.detectMultiScale(image=roi_gray, scaleFactor=1.7, minNeighbors=22)
-        for (sx, sy, sw, sh) in smile:
-            cv2.rectangle(img=roi_color, pt1=(sx, sy), pt2=(sx + sw, sy + sh), color=(0, 55, 200), thickness=2)
+            
     return frame
 
 # Turning the webcam on.
