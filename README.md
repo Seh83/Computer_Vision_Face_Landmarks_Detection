@@ -1,4 +1,4 @@
-# Simple_Face_Features_Recognition
+# Computer_Vision_Face_Landmarks_Detection
 A simple implementation of facial features (face, eyes &amp; nose) recognition application using OpenCV library. 
 
 ## Getting Started
